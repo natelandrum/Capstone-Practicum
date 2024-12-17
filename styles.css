@@ -1,0 +1,437 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1.7rem 0;
+    text-align: center;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    padding: 0.5rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f4b400;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 25px;
+}
+
+.hamburger div {
+    background-color: #fff;
+    height: 4px;
+    width: 30px;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease-out;
+}
+
+.hamburger.active div:first-child {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+/* Mobile Nav Animation */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    nav ul.mobile {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: #333;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease, opacity 0.3s ease;
+    }
+
+    nav ul.mobile.active {
+        height: 300px; 
+        opacity: 1;
+    }
+
+    nav ul.mobile li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+#home {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #1a1a1d;
+    color: #fff;
+}
+
+#home h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#home p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #f4b400;
+}
+
+#topics {
+    padding: 2rem 0;
+    background-color: #fff;
+}
+
+#topics h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.topic-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.topic {
+    background-color: #333;
+    color: #fff;
+    margin: 1rem;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1 1 30%; /* 3 columns for larger screens */
+    max-width: 30%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.topic h3 {
+    margin-bottom: 1rem;
+}
+
+.topic a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+
+.topic:hover {
+    transform: translateY(-10px);
+}
+
+#application {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #f4f4f9;
+}
+
+#application h2 {
+    margin-bottom: 1rem;
+}
+
+#application .btn {
+    margin-top: 1rem;
+}
+
+#contact {
+    margin-top: 1rem;
+}
+
+footer {
+    background-color: #1a1a1d;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer p {
+    margin-top: 1rem;
+}
+
+footer a {
+    color: #f4b400;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    z-index: 1;
+    border: none;
+}
+
+#topic-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #333;
+    margin-top: 2rem;
+}
+
+#personal-summary {
+    background-color: #f4f4f9;
+    padding: 2rem;
+    margin: 2rem 2rem;
+    border-radius: 8px;
+    max-width: 900px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+#personal-summary h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#personal-summary p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+#quotes-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 2rem 0;
+}
+
+.quote-card {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.quote-info {
+    font-size: 1rem;
+    color: #f4b400;
+    text-align: right;
+}
+
+#application-overview {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#application-overview h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.implementation-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.step-card {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #f4b400;
+}
+
+.step-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+#impact {
+    background-color: #f4f4f9;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#impact h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+#impact p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .topic-list {
+        flex-direction: column; /* Stack topics vertically */
+        align-items: center; /* Center the items */
+    }
+
+    .topic {
+        flex: 1 1 80%; /* Each topic takes up 100% width */
+        width: 80%;
+        max-width: 80%; /* Ensure it spans the full width */
+        margin: 10px 0; /* Add spacing between the stacked items */
+    }
+    #quotes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .quote-card {
+        width: 90%;
+    }
+
+    .implementation-steps {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .step-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #topic-title {
+        font-size: 2rem;
+    }
+
+    #personal-summary p {
+        font-size: 1rem;
+    }
+
+    .quote-card {
+        width: 100%;
+    }
+
+    .back-to-top {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    #impact h2 {
+        font-size: 2rem;
+    }
+
+    #impact p {
+        font-size: 1rem;
+    }
+}
